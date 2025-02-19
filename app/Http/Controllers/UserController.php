@@ -7,9 +7,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
+    //funzione per la visualizzazione di tutti gli utenti
     public function index()
     {
         $user = User::all();
