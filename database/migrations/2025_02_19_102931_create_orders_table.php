@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('id_order');
-            $table->increments('company_type_id')->references('id')->on('company_types');
+            $table->increments('id_ordine');
+            $table->integer('id_utente')->references('id')->on('users');
+            $table->date('data_ordine');
+            $table->enum('stato', ['in Lavorazione','Confermato', 'in Elaborazione', 'Spedito', 'Consegato'])->default('in Lavorazione');
+
            
         });
     }
