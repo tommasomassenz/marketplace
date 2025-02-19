@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_prodotto')->unique();
+            $table->string('nomeprodotto', 100);
+            $table->string('descrizione', 100);
+            $table->decimal('prezzo', 8, 2);
+            $table->integer('quantita');
             $table->timestamps();
         });
     }
