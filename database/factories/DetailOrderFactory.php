@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Order_detail>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\DetailOrder>
  */
-class OrderDetailFactory extends Factory
+class DetailOrderFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class OrderDetailFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id_utente' => $this->faker->numberBetween(1, 10),
+            'id_prodotto' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

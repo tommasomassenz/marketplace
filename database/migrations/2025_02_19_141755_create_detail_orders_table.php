@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order_details', function (Blueprint $table) {
+        Schema::create('detail_orders', function (Blueprint $table) {
             $table->increments('id_dettagli_ordine');
             $table->integer('id_utente')->unsigned()->references('id')->on('users');
             $table->integer('id_prodotto')->unsigned()->references('id')->on('products');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_details');
+        Schema::dropIfExists('detail_orders');
     }
 };
