@@ -17,4 +17,4 @@ Prima di tutto si è andato a installare il framework Laravel e l'applicazione D
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ Marketplace è un progetto opne source.
