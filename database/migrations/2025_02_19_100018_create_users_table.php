@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('ddn');
             $table->date('ddr');
             $table->string('indirizzo', 100);
-            $table->string('numtelefono', 15);
+            $table->string('numtelefono', 20);
             $table->timestamps();
         });
     }

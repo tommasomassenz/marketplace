@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id_ordine')->unique();
-            $table->integer('id_utente')->references('id')->on('users')->unique();
+            $table->integer('id_utente')->references('id')->on('users')->default(1);
             $table->date('data_ordine');
-            $table->enum('stato_ordine', ['in Lavorazione','Confermato', 'in Elaborazione', 'Spedito', 'Consegato'])->default('in Lavorazione');
-            $table->decimal('prezzo_totale');
-           
+            $table->string('stato_ordine');#$table->enum('stato_ordine', ['in Lavorazione','Confermato', 'in Elaborazione', 'Spedito', 'Consegato'])->default('in Lavorazione');
+            $table->decimal('prezzo_totale',8,2);
+            $table->timestamps();
         });
     }
 

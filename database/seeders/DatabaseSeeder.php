@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,6 +17,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       
+        User::factory()
+            ->count(10)
+            ->create();
+
+        Order::factory()
+            ->count(10)
+            ->create();
+
+        Product::factory()
+            ->count(10)
+            ->create();
+
+        Category::factory()
+            ->count(10)
+            ->create();
+
+        Review::factory()
+            ->count(10)
+            ->create();
     }
 }

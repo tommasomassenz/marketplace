@@ -21,11 +21,11 @@ class UserFactory extends Factory
             'email' => $this->faker->email(),
             'password' => $this->faker->password(),
             'nome' => $this->faker->name(),
-            'cognome'=> $this->faker->surname(),
+            'cognome'=> $this->faker->name(),
             'ddn' => $this->faker->date(),
             'ddr' => $this->faker->date(),
             'indirizzo' => $this->faker->address(),
-            'telefono' => $this->faker->phoneNumber(),
+            'numtelefono' => $this->faker->e164PhoneNumber,
         ];
     }
 }
