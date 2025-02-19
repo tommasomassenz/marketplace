@@ -1,9 +1,8 @@
 <?php
 
-
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Http\Request\;
 
 class UserRequest extends FormRequest
 {
@@ -14,17 +13,6 @@ class UserRequest extends FormRequest
     {
         return true;
     }
-
-    public function store(UserRequest $request)
- {
-    $user = User::create($request->all());
-
-    return response()->json([
-        'status' => true,
-        'message' => "user Created successfully!",
-        'user' => $user
-    ], 200);
- }
 
     /**
      * Get the validation rules that apply to the request.

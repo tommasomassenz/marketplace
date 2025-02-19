@@ -19,6 +19,7 @@ class UserController extends Controller
         ]);
     }
 
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -32,7 +33,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+    $user = User::create($request->all());
+
+    return response()->json([
+        'status' => true,
+        'message' => "user Created successfully!",
+        'user' => $user
+    ], 200);
     }
 
     /**
