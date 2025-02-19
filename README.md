@@ -7,7 +7,7 @@ Questo progetto è una demo di una Ecommerce in cui si possono acquistare prodot
 
 ## Project description
 
-Prima di tutto si è andato a installare il framework Laravel e l'applicazione Docker Desktop. Poi sono state pensate le diverse entità che compongono Marketplace ovvero: User, Order, Product, Category e Review e le relative relazioni tra esse("[Modello Relazionale](./tabelle/tabelle-marketplace.docx)"). In secondo luogo sono stati creati i model stabilendo i vincoli d'integrità; in aggiunta create le tabelle tramite i seeder ed infine popolate tramite dati creati randomicamente.
+Prima di tutto si è andato a installare il framework Laravel e l'applicazione Docker Desktop. Poi sono state pensate le diverse entità che compongono Marketplace ovvero: User, Order, Product, Category e Review e le relative relazioni tra esse ("[Modello Relazionale](./tabelle/tabelle-marketplace.docx)"). In secondo luogo sono stati creati i model stabilendo i vincoli d'integrità; in aggiunta create le tabelle tramite i seeder ed infine popolate tramite dati creati randomicamente.
 
 ### References
 
@@ -15,6 +15,6 @@ Prima di tutto si è andato a installare il framework Laravel e l'applicazione D
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 - [Framework vue.js](https://vuejs.org/).
 
-## License
+#### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
