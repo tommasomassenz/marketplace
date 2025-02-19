@@ -5,13 +5,11 @@
 Marketplace è un progetto sviluppato da Massenz Tommaso e Nahi Monneka Josue, durante il PCTO presso la SkiaNet, .
 Questo progetto è una demo di un Ecommerce in cui si possono acquistare prodotti di vario tipo. E' stato sviluppato tramite Laravel,framework open source di tipo MVC(Model View Controller) per lo sviluppo di applicazioni web, un database locale mysql, e Docker Desktop, applicazione installabile che fornisce la tecnologia base per la creazione e l'esecuzione di container.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### References
+
+- [Laravel](https://laravel.com/).
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+- [Framework vue.js](https://vuejs.org/).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
