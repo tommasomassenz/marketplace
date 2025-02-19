@@ -2,7 +2,7 @@
 
 ## About Marketplace
 
-Marketplace è un progetto sviluppato da Massenz Tommaso e Nahi Monneka Josue, durante il PCTO presso la SkiaNet, .
+Marketplace è un progetto sviluppato da Massenz Tommaso e Nahi Monneka Josue, durante il PCTO(Percorsi per le competenze trasversali e per l'orientamento) presso la SkiaNet, .
 Questo progetto è una demo di un Ecommerce in cui si possono acquistare prodotti di vario tipo. E' stato sviluppato tramite Laravel,framework open source di tipo MVC(Model View Controller) per lo sviluppo di applicazioni web, un database locale mysql, e Docker Desktop, applicazione installabile che fornisce la tecnologia base per la creazione e l'esecuzione di container.
 
 ## Project description
