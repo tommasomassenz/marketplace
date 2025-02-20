@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Resources\CategoryResource;
 
 class CategoryController extends Controller
 {
@@ -12,15 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return CategoryResource::collection(Category::all());
     }
 
     /**
@@ -28,23 +21,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $category = Category::create($request->all());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Category $category)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Category $category)
-    {
-        //
+        return response()->json([
+            'status' => true,
+            'message' => "Category created successfully!",
+            'category' => $category
+        ], 200);
     }
 
     /**
@@ -60,6 +43,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        //Elimino la categoria
+        $category->delete();
+
+        return response()->json(['message' => 'Category successfully deleted.'], 200);
     }
 }

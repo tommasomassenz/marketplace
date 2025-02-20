@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\OrderResource;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -12,15 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return OrderResource::collection(Order::all());
     }
 
     /**
@@ -28,23 +21,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $order = Order::create($request->all());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Order $order)
-    {
-        //
+        return response()->json([
+            'status' => true,
+            'message' => "Order created successfully!",
+            'order' => $order
+        ], 200);
     }
 
     /**
@@ -60,6 +43,10 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        // Elimino l'ordine
+        $order->delete();
+
+        return response()->json(['message' => 'Order successfully deleted.'], 200);
+    
     }
 }
