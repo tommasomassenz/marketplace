@@ -14,6 +14,10 @@ class CategoryResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            #Definizione dei campi che restituisce quando chiamo una get per tutti gli user
+            'id' => $this->id,
+            'name' => $this->name,
+        ];
     }
 }

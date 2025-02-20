@@ -14,6 +14,12 @@ class DetailOrderResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            #Definizione dei campi che restituisce quando chiamo una get per tutti gli user
+            'id' => $this->id,
+            'order_id' => $this->order_id,
+            'user_id' => $this->user_id,
+            'product_id' => $this->product_id,
+        ];
     }
 }

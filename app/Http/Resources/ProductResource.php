@@ -16,10 +16,9 @@ class ProductResource extends JsonResource
     {
         return [
             #Definizione dei campi che restituisce quando chiamo una get per tutti gli user
-            'username' => $this->username,
-            'email' => $this->email,
-            'password' => $this->password,
-
+            'id' => $this->id,
+            'name' => $this->name,
+            'price' => $this->price,
         ];
     }
 }
