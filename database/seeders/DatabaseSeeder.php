@@ -28,28 +28,14 @@ class DatabaseSeeder extends Seeder
             ReviewSeeder::class,
             DetailOrderSeeder::class,
         ]);
+
         
-        User::factory()
-            ->count(10)
-            ->create();
 
-        Order::factory()
-            ->count(10)
-            ->create();
+      
+        
 
-        Product::factory()
-            ->count(10)
-            ->create();
+        
 
-        Category::factory()
-            ->count(10)
-            ->create();
-
-        Review::factory()
-            ->count(10)
-            ->create();
-        DetailOrder::factory()
-            ->count(10)
-            ->create();
+        
     }
 }

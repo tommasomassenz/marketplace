@@ -17,9 +17,11 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'data_ordine' => $this->faker->date(),
-            'stato_ordine' => $this->faker->word(),
-            'prezzo_totale' => 300.00
+            'order_date' => $this->faker->date(),
+            'status' => $this->faker->word(),
+            'quantity' => 1,
+            'price' => 300.00,
+            'total' => 100.00,
         ];
     }
 }

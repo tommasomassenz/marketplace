@@ -20,12 +20,12 @@ class UserFactory extends Factory
             'username' => $this->faker->username(),
             'email' => $this->faker->email(),
             'password' => $this->faker->password(),
-            'nome' => $this->faker->name(),
-            'cognome'=> $this->faker->name(),
-            'ddn' => $this->faker->date(),
-            'ddr' => $this->faker->date(),
-            'indirizzo' => $this->faker->address(),
-            'numtelefono' => $this->faker->e164PhoneNumber,
+            'first_name' => $this->faker->name(),
+            'last_name'=> $this->faker->name(),
+            'birth_day' => $this->faker->date(),
+            'registration_day' => $this->faker->date(),
+            'address' => $this->faker->address(),
+            'phone_number' => $this->faker->e164PhoneNumber,
         ];
     }
 }

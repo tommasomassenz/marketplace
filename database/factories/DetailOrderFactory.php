@@ -17,8 +17,9 @@ class DetailOrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_utente' => $this->faker->numberBetween(1, 10),
-            'id_prodotto' => $this->faker->numberBetween(1, 10),
+            'order_id' => $this->faker->numberBetween(1, 10),
+            'user_id' => $this->faker->numberBetween(1, 10),
+            'product_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }
