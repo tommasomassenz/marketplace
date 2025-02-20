@@ -15,7 +15,6 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->references('id')->on('users');
             $table->integer('product_id')->unsigned()->references('id')->on('products');
-            
             $table->integer('score');
             $table->string('comment',400);
             $table->date('review_date');
