@@ -12,8 +12,7 @@ class UserController extends Controller
     //funzione per la visualizzazione di tutti gli utenti
     public function index()
     {
-        $user = User::all();
-        return UserResource::collection($user);
+        return UserResource::collection(User::all());
     }
 
     /**
@@ -58,8 +57,19 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        // Trova il user in base all'ID fornito
+        $user = User::find($id);
+
+        // Controlla se esiste
+        if (!$user) {
+            return response()->json(['message' => 'user non trovato.'], 404);
+        }
+
+        // Elimina il user
+        $user->delete();
+
+        return response()->json(['message' => 'user eliminato con successo.'], 200);
     }
 }

@@ -11,13 +11,16 @@ class UserResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return array<string, mixed>
      */
-    public function toArray(UserRequest $userRequest): array
+    public function toArray($request): array
     {
         return [
+            #Definizione dei campi che restituisce quando chiamo una get per tutti gli user
             'username' => $this->username,
             'email' => $this->email,
+            'password' => $this->password,
 
         ];
     }
