@@ -22,7 +22,12 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'user_id'=> 'required|integer',
+            'order_date'=> 'required|date',
+            'status'=> 'required|string',
+            'quantity'=> 'required|integer',
+            'price'=> 'required|numeric',
+            'total'=>'required|numeric'
         ];
     }
 }
