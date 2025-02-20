@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->increments('id_recensione');
-            $table->integer('id_utente')->unsigned()->references('id')->on('users');
-            $table->integer('id_prodotto')->unsigned()->references('id')->on('products');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->references('id')->on('users');
+            $table->integer('product_id')->unsigned()->references('id')->on('products');
             
-            $table->integer('voto');
-            $table->string('commento',400);
-            $table->date('data_recensione');
+            $table->integer('score');
+            $table->string('comment',400);
+            $table->date('review_date');
             $table->timestamps();
         });
     }

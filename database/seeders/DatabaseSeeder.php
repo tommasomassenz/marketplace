@@ -20,6 +20,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            UserSeeder::class,
+            OrderSeeder::class,
+            ProductSeeder::class,
+            CategorySeeder::class,
+            ReviewSeeder::class,
+            DetailOrderSeeder::class,
+        ]);
+        
         User::factory()
             ->count(10)
             ->create();

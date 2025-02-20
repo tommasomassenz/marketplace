@@ -31,22 +31,6 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, User $user)
@@ -57,15 +41,11 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         // Trova il user in base all'ID fornito
-        $user = User::find($id);
+        // $user = User::find($id);
 
-        // Controlla se esiste
-        if (!$user) {
-            return response()->json(['message' => 'user non trovato.'], 404);
-        }
 
         // Elimina il user
         $user->delete();

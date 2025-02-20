@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('id_ordine')->unique();
-            $table->integer('id_utente')->references('id')->on('users')->default(1);
-            $table->date('data_ordine');
-            $table->string('stato_ordine');#$table->enum('stato_ordine', ['in Lavorazione','Confermato', 'in Elaborazione', 'Spedito', 'Consegato'])->default('in Lavorazione');
-            $table->decimal('prezzo_totale',8,2);
+            $table->increments('id')->unique();
+            $table->integer('user_id')->references('id')->on('users')->default(1);
+            $table->date('order_date');
+            $table->string('status');#$table->enum('stato_ordine', ['in Lavorazione','Confermato', 'in Elaborazione', 'Spedito', 'Consegato'])->default('in Lavorazione');
+            $table->integer('quantity');
+            $table->decimal('price', 8, 2);
+            $table->decimal('total',8,2);
             $table->timestamps();
         });
     }
