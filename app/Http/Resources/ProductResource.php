@@ -14,6 +14,12 @@ class ProductResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            #Definizione dei campi che restituisce quando chiamo una get per tutti gli user
+            'username' => $this->username,
+            'email' => $this->email,
+            'password' => $this->password,
+
+        ];
     }
 }

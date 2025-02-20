@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('username', 50)->unique();
             $table->string('email', 100)->unique();
             $table->string('password', 50);
-            $table->string('nome',40);
-            $table->string('cognome',40);
-            $table->date('ddn');
-            $table->date('ddr');
-            $table->string('indirizzo', 100);
-            $table->string('numtelefono', 20);
+            $table->string('name',40);
+            $table->string('surname',40);
+            $table->date('birth_date');
+            $table->date('registation_date');
+            $table->string('address', 100);
+            $table->string('phone_number', 20);
             $table->timestamps();
         });
     }

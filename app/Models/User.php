@@ -9,7 +9,7 @@ class User extends Model
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
 
-    protected $fillable = ['username','email','password','nome','cognome','ddn','ddr','indirizzo','numtelefono'];
+    protected $fillable = ['username','email','password','name','surname','birth_date','ddr','address','phone_number'];
 
     use HasFactory;
 }

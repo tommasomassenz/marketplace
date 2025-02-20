@@ -25,12 +25,12 @@ class StoreUserRequest extends FormRequest
             'username'=> 'required|unique:users|min:6',
             'email'=> 'required|unique:users|email',
             'password'=> 'required|min:8',
-            'nome'=> 'required|min:3',
-            'cognome'=> 'required|min:3',
-            'ddn'=> 'required|date',
-            'ddr'=> 'required|date',
-            'indirizzo'=> 'required',
-            'numtelefono'=> 'required'
+            'name'=> 'required|min:3',
+            'surname'=> 'required|min:3',
+            'birth_date'=> 'required|date',
+            'registration_date'=> 'required|date',
+            'address'=> 'required',
+            'phone_number'=> 'required'
 
         ];
     }
