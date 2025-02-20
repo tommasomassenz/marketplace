@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ReviewResource;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
@@ -12,15 +13,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return ReviewResource::collection(Review::all());
     }
 
     /**
@@ -28,23 +21,13 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $review = Review::create($request->all());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Review $review)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Review $review)
-    {
-        //
+        return response()->json([
+            'status' => true,
+            'message' => "Review created successfully!",
+            'review' => $review
+        ], 200);
     }
 
     /**
@@ -60,6 +43,9 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+          // Elimina lo user
+          $review->delete();
+
+          return response()->json(['message' => 'User successfully deleted.'], 200);  
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,15 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return ProductResource::collection(Product::all());
     }
 
     /**
@@ -28,23 +21,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $product = Product::create($request->all());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
+        return response()->json([
+            'status' => true,
+            'message' => "Product created successfully!",
+            'product' => $product
+        ], 200);
     }
 
     /**
@@ -60,6 +43,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        // Elimina lo user
+        $product->delete();
+
+        return response()->json(['message' => 'User successfully deleted.'], 200);
     }
 }

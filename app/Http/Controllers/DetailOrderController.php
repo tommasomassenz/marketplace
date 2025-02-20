@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailOrder;
 use Illuminate\Http\Request;
+use App\Http\Resources\DetailOrderResource;
 
 class DetailOrderController extends Controller
 {
@@ -12,15 +13,7 @@ class DetailOrderController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return DetailOrderResource::collection(DetailOrder::all());
     }
 
     /**
@@ -28,23 +21,13 @@ class DetailOrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $detail_order = DetailOrder::create($request->all());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(DetailOrder $detailOrder)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(DetailOrder $detailOrder)
-    {
-        //
+        return response()->json([
+            'status' => true,
+            'message' => "Detail_order created successfully!",
+            'detail_order' => $detail_order
+        ], 200);
     }
 
     /**
@@ -60,6 +43,10 @@ class DetailOrderController extends Controller
      */
     public function destroy(DetailOrder $detailOrder)
     {
-        //
+    // Elimina lo user// Elimina lo user
+        $detailOrder->delete();
+
+        return response()->json(['message' => 'User successfully deleted.'], 200);
+   
     }
 }

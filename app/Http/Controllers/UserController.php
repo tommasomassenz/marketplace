@@ -8,7 +8,7 @@ use App\Http\Resources\UserResource;
 
 class UserController extends Controller
 {
-    
+
     //funzione per la visualizzazione di tutti gli utenti
     public function index()
     {
@@ -20,14 +20,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
-    $user = User::create($request->all());
 
-    return response()->json([
-        'status' => true,
-        'message' => "user Created successfully!",
-        'user' => $user
-    ], 200);
+        $user = User::create($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => "User created successfully!",
+            'user' => $user
+        ], 200);
     }
 
     /**
@@ -43,13 +43,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        // Trova il user in base all'ID fornito
-        // $user = User::find($id);
-
-
-        // Elimina il user
+        // Elimina lo user
         $user->delete();
 
-        return response()->json(['message' => 'user eliminato con successo.'], 200);
+        return response()->json(['message' => 'User successfully deleted.'], 200);
     }
 }
