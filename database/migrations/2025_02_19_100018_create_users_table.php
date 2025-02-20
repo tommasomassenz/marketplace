@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('username', 50)->unique();
             $table->string('email', 100)->unique();
             $table->string('password', 50);
-            $table->string('name',40);
-            $table->string('surname',40);
-            $table->date('birth_date');
-            $table->date('registation_date');
+            $table->string('first_name',40);
+            $table->string('last_name',40);
+            $table->date('birth_day');
+            $table->date('registration_day');
             $table->string('address', 100);
             $table->string('phone_number', 20);
             $table->timestamps();
