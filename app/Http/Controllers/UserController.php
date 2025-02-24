@@ -33,9 +33,16 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+      $request->validate([
+        'username' => 'required|string|max:50',
+        'email' => 'required|email|unique:users,email,' . $id,
+      ]);
+      $post = Post::find($id);
+      $post->update($request->all());
+      return redirect()->route('posts.index')
+        ->with('success', 'Post updated successfully.');
     }
 
     /**
